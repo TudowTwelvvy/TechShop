@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using TechShop.Data;
+using TechShop.Services;
 using TechShop.ViewModels;
 using TechShop.Views;
 
@@ -40,6 +41,8 @@ namespace TechShop
             //Database Context
             builder.Services.AddSingleton<DatabaseContext>();
 
+            //Services
+            builder.Services.AddSingleton<IProductsServices, ProductsService>();
             return builder.Build();
         }
     }
