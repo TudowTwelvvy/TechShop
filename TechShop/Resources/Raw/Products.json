@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "00000000-0000-0000-0000-000000000001",
+    "Image": "tv.png",
+    "Name": "Nieaviaa",
+    "Category": "Television",
+    "Description": "Enjoy high-quality modern TVs for your home. Find the perfect smart Tv for your living room.",
+    "Price": 7000,
+    "Stock": 3
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000002",
+    "Image": "desktop.png",
+    "Name": "HP",
+    "Category": "Computers",
+    "Description": "Latest gadgets and tech devices. Discover the newest smartphones, computers, and accessories.",
+    "Price": 8400,
+    "Stock": 2
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000003",
+    "Image": "sound.png",
+    "Name": "Sonny",
+    "Category": "Entertainment",
+    "Description": "Everything for music lovers. Find sound systems, instruments, and accessories to enhance your musical experience.",
+    "Price": 9500,
+    "Stock": 5
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000004",
+    "Image": "hphone.png",
+    "Name": "Huwaii",
+    "Category": "Electronics",
+    "Description": "Explore the latest mobile phones from top brands. Find the perfect smartphone for you.",
+    "Price": 3600,
+    "Stock": 1
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000005",
+    "Image": "wifiRouter.png",
+    "Name": "TelkomSA Wifi",
+    "Category": "Internent",
+    "Description": "Upgrade your home or office network with this high-performance Wi-Fi Router designed for fast, reliable, and secure internet access. With dual-band technology, you get smooth streaming, lag-free gaming, and stable connections for all your smart device",
+    "Price": 700,
+    "Stock": 4
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000006",
+    "Image": "playstation.png",
+    "Name": "Sonny PS4",
+    "Category": "Gamming",
+    "Description": "A powerful gaming system with stunning graphics, an impressive game library, and smooth performance for all your favourite PlayStation titles.",
+    "Price": 4000,
+    "Stock": 0
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000006",
+    "Image": "earphones.png",
+    "Name": "Fox Earphones",
+    "Category": "Accessories",
+    "Description": "High-quality wired/wireless earphones designed for clear sound, deep bass, and all-day comfort. Perfect for music, calls, gaming, and everyday use. Lightweight, durable, and compatible with all devices.",
+    "Price": 60,
+    "Stock": 0
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000006",
+    "Image": "pc.png",
+    "Name": "Sul Gamming PC",
+    "Category": "PCs",
+    "Description": "A powerful and reliable desktop PC designed for work, gaming, and everyday use. Featuring fast performance, smooth multitasking, and high-quality components—perfect for home or office.",
+    "Price": 15000,
+    "Stock": 0
+  }
+]
