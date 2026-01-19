@@ -2,11 +2,107 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TechShop.Views.HomeView"
+             xmlns:vm="clr-namespace:TechShop.ViewModels"
+             xmlns:models ="clr-namespace:TechShop.Models"
+             x:DataType="vm:HomeViewModel"
              Title="HomeView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto , Auto, *" Padding="2, 0,2,0">
+        <Frame 
+           Padding="1,1,1,0"
+           Margin="10"
+            CornerRadius="20"
+            Grid.Row="0">
+            <SearchBar Placeholder="Search products"
+                   Text="{Binding SearchText}" Background="LightGray"/>
+        </Frame>
+
+        <CollectionView ItemsSource="{Binding Categories}"
+                        Margin="5,0,5,15"
+                        x:Name="CollectionCategories"
+                        Grid.Row="1">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Category">
+                    <VerticalStackLayout>
+                        <Frame 
+                               Padding="2" >
+                            <Image Source="{Binding Image}"
+                                   WidthRequest="30"
+                                   HeightRequest="30"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"/>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path = BindingContext.SearchByCategoryCommand, Source={Reference CollectionCategories}}"
+                                                      CommandParameter="{Binding Title}" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Label Text="{Binding Title}"
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               Margin="5"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator IsVisible="{Binding IsLoading}"
+                           IsRunning="{Binding IsLoading}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center" Grid.Row="2"/>
+
+        <CollectionView ItemsSource="{Binding FilteredProductsList}"
+                        VerticalOptions="Fill"
+                        x:Name="CollectionProduct"
+                        Margin="10"
+                        Grid.Row="2">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="2"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Product">
+                    <Frame CornerRadius="15"
+                           BackgroundColor="White"
+                           BorderColor="#E0E0E0"
+                           Padding="10"
+                           Margin="5"
+                           HasShadow="True">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Name}"
+                                   FontAttributes="Bold"
+                                   FontSize="Title"
+                                   InputTransparent="True" />
+
+                            <Image Source="{Binding Image}" 
+                                   WidthRequest="100"
+                                   Margin="5,5,5,10"/>
+
+                            <Label Text="{Binding Description}"
+                                   HorizontalTextAlignment="Start"
+                                   FontSize="14"
+                                   InputTransparent="True" />
+
+                            <Label Text="{Binding Price, StringFormat='${0:0}'}"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   Margin="2,10"
+                                   InputTransparent="True" />
+
+                        </VerticalStackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path = BindingContext.DescriptionCommand, Source={Reference CollectionProduct}}"
+                                                  CommandParameter="{Binding Id}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+
+    </Grid>
 </ContentPage>

@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:TechShop"
     xmlns:views="clr-namespace:TechShop.Views"
     Title="TechShop">
+  
 
     <TabBar>
         <Tab Title="Home"
