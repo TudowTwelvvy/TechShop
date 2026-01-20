@@ -21,8 +21,10 @@ namespace TechShop
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            Routing.RegisterRoute("ProductPage", typeof(ProductDescriptionView));
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             // Register Views
             builder.Services.AddTransient<HomeView>();
@@ -30,6 +32,8 @@ namespace TechShop
             builder.Services.AddTransient<MenuView>();
             builder.Services.AddTransient<ShoppingCartView>();
             builder.Services.AddTransient<ProductDescriptionView>();
+            builder.Services.AddTransient<ProductDescriptionView>();
+            builder.Services.AddTransient<ProductDescriptionViewModel>();
 
             // Register ViewModels
             builder.Services.AddTransient<HomeViewModel>();
@@ -37,6 +41,7 @@ namespace TechShop
             builder.Services.AddTransient<MenuViewModel>();
             builder.Services.AddTransient<ShoppingViewModel>();
             builder.Services.AddTransient<ShoppingViewModel>();
+            builder.Services.AddTransient<ProductDescriptionViewModel>();
 
             //Database Context
             builder.Services.AddSingleton<DatabaseContext>();
